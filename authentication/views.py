@@ -271,29 +271,34 @@ def inflow_edit(request, pk):
 @login_required
 def inflow_update(request, pk):
     try:
-        name = request.POST['name']
+        registered_by = request.user.get_username()
+        inflow = Inflow.objects.filter(
+            pk=pk,
+            registered_by=registered_by
+        )
         category = Category.objects.filter(
             registered_by__iexact=request.user.username,
             id__iexact=request.POST['categories']
         )[0]
-        registered_at = request.POST['reg_date']
-        registered_by = request.user.username
-        value = request.POST['value']
-
-        inflow = Inflow.objects.filter(
-            pk=pk,
-            registered_by=registered_by
-        ).update(
-            name=name,
-            value=value,
-            category=category,
-            registered_at=registered_at,
-            registered_by=registered_by
+        if len(inflow) != 0:
+            updatein = Inflow.objects.filter(
+                pk=pk,
+                registered_by=registered_by
+            ).update(
+                name=request.POST['name'],
+                value=request.POST['value'],
+                category=category
+            )
+        else:
+            return HttpResponse('Inflow not found.')
+    except ProtectedError as exc:
+        messages.error(
+            request,
+            "Cannot delete some instances of model, because they are referenced through protected foreign keys."
         )
-        messages.success(request, "Inflow was updated!")
-    except Exception as exc:
-        messages.error(request, 'An error was ocurred.')
-    return redirect('inflow_edit/' + str(pk))
+    except Http404 as e:
+        raise HttpResponse('404' + str(e))
+    return redirect('inflow_list')
 
 
 @login_required
@@ -564,31 +569,37 @@ def category_create(request):
     )
 
 
+@login_required
 def outflow_update(request, pk):
     try:
-        name = request.POST['name']
+        registered_by = request.user.get_username()
+        inflow = Outflow.objects.filter(
+            pk=pk,
+            registered_by=registered_by
+        )
         category = Category.objects.filter(
             registered_by__iexact=request.user.username,
             id__iexact=request.POST['categories']
         )[0]
-        registered_at = request.POST['reg_date']
-        registered_by = request.user.username
-        value = request.POST['value']
-
-        outflow = Outflow.objects.filter(
-            pk=pk,
-            registered_by=registered_by
-        ).update(
-            name=name,
-            value=value,
-            category=category,
-            registered_at=registered_at,
-            registered_by=registered_by
+        if len(inflow) != 0:
+            updatein = Outflow.objects.filter(
+                pk=pk,
+                registered_by=registered_by
+            ).update(
+                name=request.POST['name'],
+                value=request.POST['value'],
+                category=category
+            )
+        else:
+            return HttpResponse('Inflow not found.')
+    except ProtectedError as exc:
+        messages.error(
+            request,
+            "Cannot delete some instances of model, because they are referenced through protected foreign keys."
         )
-        messages.success(request, "Outflow was updated!")
-    except Exception as exc:
-        messages.error(request, 'An error was ocurred.')
-    return redirect("authentication/outflow_detail/" + str(pk))
+    except Http404 as e:
+        raise HttpResponse('404' + str(e))
+    return redirect('inflow_list')
 
 
 def outflow_edit(request, pk):
