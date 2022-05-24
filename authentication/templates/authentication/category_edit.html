@@ -1,0 +1,50 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<div class="card" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="card-header">
+      <h2>Edit category</h2>
+    </div>
+    <div class="card-body">
+      <form action="{% url 'category_update' category.id %}" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Code:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="code" value="{{ category.code }}" readonly="true" required="true">
+          </div>
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="name" value="{{ category.name }}" required="true">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Description:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="description" value="{{ category.description }}" required="true">
+          </div>
+          <label for="reg_date" class="col-sm-2 col-form-label">Data:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="reg_date" readonly="true" value='{{ category.registered_at|date:"d/m/Y" }}' required="true">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="registered_by" class="col-sm-2 col-form-label">Registered by:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="registered_by" readonly="true" value="{{ category.registered_by }}" required="true">
+          </div>
+        </div>
+
+        <input class="btn btn-success" style="text-align:center;" type="submit" value="Save">
+      </form>
+    </div>
+</div>
+<!-- <img src="{% static 'authentication/images/team1.png' %}" alt=""> -->
+
+{% endblock %}

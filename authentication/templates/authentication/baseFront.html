@@ -1,0 +1,118 @@
+{% extends './component/base.html' %}
+{% load static %}
+
+{% block title %}
+Welcome to CashApp
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'authentication/css/baseFrontStyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+{% endblock style %}
+
+{% block content %}
+    <main class="main">
+          <img class="heart1" id="heart" src="{% static 'authentication/ethernet/609a3b2585be7d1dd1e65ec4_Heart Decor Fill.svg'%}" alt="">
+          <div class="contentwe">
+            <h1 class="we">WE ARE CASH APP</h1>
+           <div class="content">
+              <div class="content__container">
+                  <ul class="content__container__list">
+                    <li class="content__container__list__item">Predict your business's future</li>
+                    <li class="content__container__list__item">Predict it will be a game changer</li>
+                    <li class="content__container__list__item">Predict your business's future</li>
+                    <li class="content__container__list__item">Predict it will be a game changer</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="infopart1">
+            <h1>Live forecasts for your growing business, in minutes.</h1>
+            <p>Forecasting is hard and can be tough to stay on top of.</p>
+            <p>
+              So, we've made it simple, live, fast and accurate. Log in, check your future cash flow, and then get on with your day.
+            </p>
+            <article>But, if you need more help than just software, we have a team of fully qualified business advisors in-house, who can help you with your operations, growth planning, fundraising or investors. Ask us anything.</article>
+          </div>
+          <img class="blob1" src="{% static 'authentication/images/blob1.png' %}" alt="">
+          <img class="sales1" src="{% static 'authentication/images/sales1.PNG' %}" alt="">
+
+          <div class="advantages_body">
+            <div class="advantages_column">
+              <div class="advantages_item">
+                <div class="advantages_value">2014</div>
+                <div class="advantages_text">Founded in the UK by a small business owner </div>
+              </div>
+              <div class="advantages_item">
+                <div class="advantages_value">100k+</div>
+                <div class="advantages_text">Small businesses supported across the globe since launch</div>
+              </div>
+              <div class="advantages_item">
+                <div class="advantages_value">2k+</div>
+                <div class="advantages_text">Global accounting firms helping their clients with our products</div>
+              </div>
+            </div>
+          </div>
+        <div class="infopart2">
+            <h1>Which product is best for you?</h1  >
+            <article>Whether you are a small business, just starting out or are more established with more than one entity, we've built cash flow, reporting and forecasting software that's easy for you to use, quick to get started with and fast to take action on.
+            </article>
+          </div>
+        <section class="section2">
+
+          <div class="info_container">
+          <div class="infopart3">
+            <h2>Futrli Predict is live, accurate, daily cash flow forecasting.</h2>
+            <article class="predict">Predict uses all of your accounting data to build a cash flow forecast. But it doesn't stop there. Operations, staff, profit, trends, sales, tax, it's all predicted across the P&L, Balance Sheet and Cash Flow for 3 years: in minutes.
+
+              Editing is simple, and there are Google Sheet live Hotlink templates for payroll, loans, and so much more.</article>
+          </div>
+             <img src="{% static 'authentication/images/sales2.PNG' %}" class="sales2" alt="">
+          </div>
+        </section>
+
+        <section class="section3">
+          <div>
+            <p class="empty">nothing here</p>
+          </div>
+          <div>
+            <p class="yes">YES</p>
+          </div>
+           <img class="heart3" src="{% static 'authentication/ethernet/609a3b2585be7d1dd1e65ec4_Heart Decor Fill.svg' %}" alt="">
+          <div class="reviews">
+            <div class="review_item first">
+              <img src="{% static 'authentication/images/dude.png' %}" alt="" class="dude">
+              <p class="review_text">"It is the only cash forecast tool that, you know, does a cash flow forecast!"
+              </p >
+            </div>
+            <div class="review_item">
+              <img src="{% static 'authentication/images/dude2.jpg' %}" alt="" class="dude">
+              <p class="review_text">It is simply fantastic! Powerful, flexible and intuitive to use.
+              </p >
+            </div>
+            <div class="review_item">
+              <img src="{% static 'authentication/images/dude3.png' %}" alt="" class="dude">
+              <p class="review_text">Pivotal in helping clients navigate through Covid and a must-have piece of cloud software
+
+              </p >
+            </div>
+            <div class="review_item">
+              <img src="{% static 'authentication/images/dude4.jpg' %}" alt="" class="dude">
+              <p class="review_text">Our business has grown as a result of the services we can deliver using Futrli
+              </p >
+            </div>
+            <div class="review_item">
+              <img src="{% static 'authentication/images/dude5.jpeg' %}" alt="" class="dude">
+              <p class="review_text">It is a "kick-ass" app because it works beautifully.</p>
+            </div>
+            <div class="review_item sixth">
+              <img src="{% static 'authentication/images/dude6.png' %}" alt="" class="dude">
+              <p class="review_text">Futrli is amazing and plays an integral part to the services we give our clients.
+
+              </p >
+            </div>
+          </div>
+        </section>
+    </main>
+{% endblock %}

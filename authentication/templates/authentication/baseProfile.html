@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'authentication/css/profile.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+
+    <!-- Tempus Dominus Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <header class="header">
+              <div class="header__container">
+                <a href="{% url 'home' %}" class="header_logo">
+                  <img class="logo_img" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c555a3118036499.60812f054bd81.jpg" alt="Логотип">
+                </a>
+                <div id="nav">
+                    <nav class="header_menu menu">
+                    <ul class="menu_list">
+                        <li class="menu_item"><a href="{% url 'profile' %}" class="menu_link">Overview</a></li>
+                        <li class="menu_item"><a href="{% url 'account' %}" class="menu_link">Account</a></li>
+                        <li class="menu_item"><a href="{% url 'category_list' %}" class="menu_link">Category</a></li>
+                        <li class="menu_item"><a href="{% url 'inflow_list' %}" class="menu_link">Inflow</a></li>
+                        <li class="menu_item"><a href="{% url 'outflow_list' %}" class="menu_link">Outflow</a></li>
+                    </ul>
+                    </nav>
+                </div>
+            </div>
+            </header>
+        </div>
+    </header>
+    <!-- <img class="blob" style="position: absolute; z-index: -1; width: 100%;" src="{% static 'authentication/images/blob-back.svg' %}" alt=""> -->
+    <!-- <img class="" style="position: absolute; top: -40%; z-index: -1; width: 100%;" src="{% static 'authentication/images/wave-back3.png' %}" alt="">
+    <img class="" style="position: absolute; top: 90%; z-index: -1; width: 100%; " src="{% static 'authentication/images/wave-back4.png' %}" alt=""> -->
+
+    
+    {% block content %}
+
+    {% endblock  %}
+</body>
+</html>

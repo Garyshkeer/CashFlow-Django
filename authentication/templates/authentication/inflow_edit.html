@@ -1,0 +1,53 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="card" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="card-header">
+      <h2>Edit entry</h2>
+    </div>
+    <div class="card-body">
+      <form action="{% url 'inflow_update' inflow.id %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="name" name="name" value="{{ inflow.name }}" required="true">
+          </div>
+
+          <label for="categories">Choose a category:</label>
+          <div class="col-sm-3">
+            <select name="categories" class="form-control" id="categories" required="true">
+              <option value=""></option>
+              {% for category in categories %}
+                <option value="{{ category.id }}">{{category}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Data:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="reg_date" id="reg_date" value='{{ inflow.registered_at|date:"d/m/Y" }}' readonly="true" required="true">
+          </div>
+
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Value $:</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" step="any" name="value" id="value" value="{{ inflow.value }}" required="true">
+          </div>
+
+        </div>
+
+        <!--<br>-->
+        <input class="btn btn-info" type="submit" value="To save">
+      </form>
+    </div>
+</div>
+{% endblock %}

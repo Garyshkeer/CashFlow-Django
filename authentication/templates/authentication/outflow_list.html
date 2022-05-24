@@ -1,0 +1,90 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'authentication/css/outin.css' %}">
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="all"> <div class="container-fluid container-home" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>My Outflows</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <a class="btn btn-secondary" href="{% url 'outflow_create' %}" role="button"><span>Create Outflow</span></a>
+      </div>
+    </div>
+  </div>
+    {% for message in messages %}
+        {% if message %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Registered at</th>
+          <th scope="col">Registered by</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% if outflows %}
+        {% for outflow in outflows %}
+        <tr>
+            <td><a href="{% url 'outflow_detail' outflow.id %}">{{ outflow.name }}</a>
+            </td>
+            <td>{{ outflow.category }}</td>
+            <td>{{ outflow.registered_at|date:"d/m/Y" }}</td>
+            <td>{{ outflow.registered_by }}</td>
+            <td>{{ outflow.value }}</td>
+            <td>
+              <a class="icon" href="{% url 'outflow_delete' outflow.id %}"><img src="{% static 'authentication/images/icons8-trash.svg' %}" alt=""></a> 
+              outflow<a class="icon" href="{% url 'outflow_edit' outflow.id %}"><img src="{% static 'authentication/images/icons8-edit.svg' %}" alt=""></a> 
+              <!-- <button type="button" class="btn btn-outline">
+                <a href="{% url 'outflow_detail' outflow.id %}">
+                  <i class="glyphicon glyphicon-eye-open"></i>
+                </a>
+              </button>
+              <button type="button" class="btn btn-outline">
+                <a href="{% url 'outflow_edit' outflow.id %}">
+                  <i class="glyphicon glyphicon-edit"></i>
+                </a>
+              </button>
+              <button type="button" class="btn btn-outline">
+                <a href="{% url 'outflow_delete' outflow.id %}">
+                  <i class="glyphicon glyphicon-trash"></i>
+                </a>
+              </button> -->
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <td>Outputs were not found for the current month.</td>
+    {% endif %}
+      </tbody>
+    </table>
+{% endblock %}</div>
+</body>
+</html>
+   

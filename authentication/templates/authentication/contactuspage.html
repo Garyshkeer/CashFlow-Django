@@ -1,0 +1,54 @@
+{% extends './component/base.html' %}
+{% load static %}
+
+{% block title %}
+Contact us
+{% endblock title %}
+
+    {% block style %}
+        <link rel="stylesheet" href="{% static 'authentication/css/contactuspagestyle.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% endblock style %}
+
+    {% block content %}
+
+      <div class="contactinfo1">
+        <h1>Here when you need us</h1>
+        <p>With teams in the UK and Australia we're covering the clock!</p>
+      </div>
+
+      <img class="office" src="{% static 'authentication/images/office1.jpg' %}" alt="">
+      <img class="wave" src="{% static 'authentication/ethernet/60997d2352684339a12e40b4_white_divider2.svg' %}" alt="">
+      <img class="heart" src="{% static 'authentication/ethernet/609a3b2585be7d1dd1e65ec4_Heart Decor Fill.svg' %}" alt="">
+
+      <div class="contactinfo2">
+        <p class="email">EMAIL US</p>
+        <a class="email_link" href="">hello@cashapp.com</a>
+        <h1>Start the conversation</h1>
+        <p>Whoever you are, whatever your business, get in touch.
+          We want to hear from you!
+          If you have a support query - please use the chat box below or email hello@futrli.com</p>
+      </div>
+
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+           <form method="post">
+        {% csrf_token %}
+        {{ form.full_name }}
+        <br>
+        {{ form.email_address }}
+        <br>
+        {{ form.company }}
+        <br>
+        {{ form.phone_number }}
+        <br>
+        {{ form.message }}
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <span>{{error}}</span>
+        </form>
+        </div>
+        </div>
+    {% endblock %}

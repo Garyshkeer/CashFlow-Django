@@ -1,0 +1,323 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+.heart1{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.contentwe{
+    display: inline;
+    color: rgb(20, 14, 56);
+    font-size: 140%;
+}
+.we{
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.content {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+    line-height: 40px;
+    z-index: 100;
+    font-size: 150%;
+
+}
+.content__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+}
+
+.content__container__text {
+    display: inline;
+    float: left;
+    margin: 0;
+}
+.content__container__list {
+    margin-top: 0;
+    padding-left: 110px;
+    text-align: left;
+    list-style: none;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+}
+@-webkit-keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+   }
+    50% {
+        opacity: 1;
+   }
+}
+@-webkit-keyframes change {
+    0%, 12.66%, 100% {
+        transform: translate3d(0, 0, 0);
+   }
+    16.66%, 29.32% {
+        transform: translate3d(0, -25%, 0);
+   }
+    33.32%, 45.98% {
+        transform: translate3d(0, -50%, 0);
+   }
+    49.98%, 62.64% {
+        transform: translate3d(0, -75%, 0);
+   }
+    66.64%, 79.3% {
+        transform: translate3d(0, -50%, 0);
+   }
+    83.3%, 95.96% {
+        transform: translate3d(0, -25%, 0);
+   }
+}
+@-o-keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+   }
+    50% {
+        opacity: 1;
+   }
+}
+@-o-keyframes change {
+    0%, 12.66%, 100% {
+        transform: translate3d(0, 0, 0);
+   }
+    16.66%, 29.32% {
+        transform: translate3d(0, -25%, 0);
+   }
+    33.32%, 45.98% {
+        transform: translate3d(0, -50%, 0);
+   }
+    49.98%, 62.64% {
+        transform: translate3d(0, -75%, 0);
+   }
+    66.64%, 79.3% {
+        transform: translate3d(0, -50%, 0);
+   }
+    83.3%, 95.96% {
+        transform: translate3d(0, -25%, 0);
+   }
+}
+@-moz-keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+   }
+    50% {
+        opacity: 1;
+   }
+}
+@-moz-keyframes change {
+    0%, 12.66%, 100% {
+        transform: translate3d(0, 0, 0);
+   }
+    16.66%, 29.32% {
+        transform: translate3d(0, -25%, 0);
+   }
+    33.32%, 45.98% {
+        transform: translate3d(0, -50%, 0);
+   }
+    49.98%, 62.64% {
+        transform: translate3d(0, -75%, 0);
+   }
+    66.64%, 79.3% {
+        transform: translate3d(0, -50%, 0);
+   }
+    83.3%, 95.96% {
+        transform: translate3d(0, -25%, 0);
+   }
+}
+@keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+   }
+    50% {
+        opacity: 1;
+   }
+}
+@keyframes change {
+    0%, 12.66%, 100% {
+        transform: translate3d(0, 0, 0);
+   }
+    16.66%, 29.32% {
+        transform: translate3d(0, -25%, 0);
+   }
+    33.32%, 45.98% {
+        transform: translate3d(0, -50%, 0);
+   }
+    49.98%, 62.64% {
+        transform: translate3d(0, -75%, 0);
+   }
+    66.64%, 79.3% {
+        transform: translate3d(0, -50%, 0);
+   }
+    83.3%, 95.96% {
+        transform: translate3d(0, -25%, 0);
+   }
+}
+.infopart1{
+    display: inline-block;
+    width: 35%;
+    margin: 6%;
+    color: rgb(20, 14, 56);
+    font-family: 'Ubuntu', sans-serif;
+}
+h1{
+    font-weight: bolder;
+    font-size: 4em;
+}
+p{
+    font-weight: 900;
+    font-size: 1.5em;
+}
+.blob1{
+    width: 45%;
+    position: absolute;
+    top: 55%;
+}
+.sales1{
+    position: relative;
+    z-index: 6;
+    width: 40%;
+}
+.advantages_body{
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin-top: 6%;
+}
+.advantages_item{
+    font-family: 'Ubuntu', sans-serif;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 160%;
+    text-align: center;
+    padding: 2%;
+    width: 28%;
+    color: rgb(20, 14, 56);
+}
+
+.advantages_value{
+    padding-bottom: 6%;
+    font-size: 250%;
+    font-family: 'Patua One', cursive;    
+}
+.section2{
+    background-image: url("/static/authentication/images/wave-haikei-1.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.heart2{
+    position: absolute;
+    top: 17%;
+    z-index: 20;
+}
+.heart3{
+    position: relative;
+    left: 37%;
+    top: -22%;
+    z-index: 150;
+}
+.infopart2{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(20, 14, 56);
+    font-weight: 500;
+    width: 70%;
+    margin: 7% 15% 0 15%;
+}
+.infopart3{
+    width: 40%;
+    display: inline-block;
+    padding: 3%;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(20, 14, 56);
+}
+.info_container{
+    border: 1px solid rgb(218, 218, 218);
+    background-color: white;
+    width: 70%;
+    height: 90%;
+    border-radius: 20px;
+    margin-left: 15%;
+    margin-top: 5%;
+    box-shadow: 3px #9ceeaa ;
+}
+.sales2{
+    width: 50%;
+    margin-top: 5%;
+}
+h2{
+    font-size: 250%;
+}
+.predict{
+    font-size: 1em;
+}
+.section3{
+    height: 150vh;
+    background: url("/static/authentication/images/wave-haikei2.png") no-repeat;
+    background-size:cover;
+}
+.reviews{
+    margin-left: 5%;
+    font-family: 'Hubballi', cursive;
+    text-align: center;
+}
+.review_item{
+    display: inline-flex;
+    border-radius: 45px;
+    border: 2px solid black;
+    background-color: white;
+    margin: 15px;
+    padding: 5px;
+    justify-content: center;
+}
+.review_text{
+    font-size: 0.8em;
+    font-weight: 700;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.dude{
+    width: 7%;
+    padding: 5px;
+    border-radius: 50%;
+    display:block;
+    object-fit: unset;  
+}
+.empty{
+    margin: 0;
+    visibility: hidden;
+    font-size: 800%;
+}
+.yes{
+    font-size: 650%;
+    margin: 0;
+    font-family: 'Hubballi', cursive;
+    font-weight: 100;
+    color: #a39cee;
+    border: 6px solid black;
+    width: fit-content;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 3px;
+    border-style: double;
+    margin-left: 45%;
+    margin-bottom: 8%;
+
+}
+

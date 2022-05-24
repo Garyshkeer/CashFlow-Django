@@ -1,0 +1,45 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="card" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="card-header">
+      Edit Outflow
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>{{ outflow.name }}</li>
+        <li>{{ outflow.category }}</li>
+        <li>{{ outflow.registered_at|date:"d/m/Y" }}</li>
+        <li>{{ outflow.registered_by }}</li>
+        <li>{{ outflow.value }}</li>
+      </ul>
+      <form action="{% url 'cashflow:outflow_update' outflow.id %}" method="post">
+        {% csrf_token %}
+        <label>Name:</label>
+        <input type="text" name="name" id="name" value="{{ outflow.name }}" required="true">
+        <!--<br>-->
+        <label for="categories">Choose a category:</label>
+
+        <select name="categories" id="categories" required="true">
+          <option value=""></option>
+          {% for category in categories %}
+            <option value="{{ category.id }}">{{category}}</option>
+          {% endfor %}
+        </select>
+        <!--<br>-->
+        <label>Data:</label>
+        <input type="date" name="reg_date" id="reg_date" value="{{ outflow.registered_at }}"  required="true">
+        <!--<br>-->
+        <label>Value:</label>
+        <input type="number" step="any" name="value" id="value" value="{{ outflow.value }}"  required="true">
+        <!--<br>-->
+        <input class="btn btn-info" type="submit" value="Save">
+      </form>
+    </div>
+</div>
+{% endblock %}

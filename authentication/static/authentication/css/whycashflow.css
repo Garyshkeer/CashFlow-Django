@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+.whycashapp h1{
+    text-align: center;
+    margin-top:50px;
+    font-size: 70px;
+    padding-bottom: 10px;
+    font-weight: 900;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(20, 14, 56);
+}
+.pip p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.pop{
+    text-align: center;
+    
+    position: relative;
+    z-index: 10;
+    
+}
+.pop h1,h2{
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(20, 14, 56);
+    margin-top: 300px;
+    font-weight: bolder;
+    font-size: 70px;
+}
+
+.zhaina{
+    background-color: #001E3B;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    width: 160px;
+    height: 50px;
+    margin-left: 44%;
+    padding-top: 1%;
+    padding-left: 1%;
+    border-radius: 5%;
+    margin-top: 5%;
+    font-family: 'Ubuntu', sans-serif;
+  
+    
+}
+.sozder{
+    margin-top: -350px;
+    width: 50%;
+    margin-left: 100px;
+    color: rgb(20, 14, 56);
+}
+.tips{
+    margin-top: -50px;
+    margin-left: 15%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.tips1{
+    margin-left: 15%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+.opo{
+    width: 500px;
+    padding-left: 100px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    margin-top: -25%;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 20%;
+}
+.jazu{
+    margin-bottom: 200px;
+}
+.jazu h1{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+}
+.jazu h2{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    font-weight: 1000;
+}
+.card-img-top{
+    width: 200px;
+}
+.bob{
+    display: flex;
+}
+.bob img{
+    width: 500px;
+    border-radius: 15%;
+    border: solid black;
+    margin-top: -20%;
+    margin-left: 4%;
+    box-shadow:15px 15px 10px rgb(99, 58, 39);
+}
+
+
+

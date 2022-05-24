@@ -1,0 +1,72 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+{% if no_categories %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="alert alert-warning" role="alert" style="font-family: 'Ubuntu', sans-serif;">
+    <p><strong></strong>You need to create at least one category.</p>
+  </div>
+{% else %}
+<div class="container-fluid" style="text-align:center;">
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Create entry</h2>
+    </div>
+    <div class="card-body">
+      <form action="{% url 'inflow_save' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="name" name="name" value="" required="true">
+          </div>
+
+          <label for="categories">Choose a category:</label>
+          <div class="col-sm-3">
+            <select name="categories" class="form-control" id="categories" required="true">
+              <option value=""></option>
+              {% for category in categories %}
+                <option value="{{ category.id }}">{{category}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="form-group row">
+          <label for="reg_date" class="col-sm-2 col-form-label">Data:</label>
+          <div class="col-sm-4">
+            <input type="date" class="form-control" name="reg_date" id="reg_date" value="" required="true">
+          </div>
+
+          <label for="value" class="col-sm-1" style="text-align:left; padding-left: 3px;">Value:</label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" step="any" style="margin-left: 10px;" name="value" id="value" value="" required="true">
+          </div>
+
+        </div>
+        <input class="btn btn-success" style="text-align:center;" type="submit" value="To save">
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+</body>
+</html>
+  

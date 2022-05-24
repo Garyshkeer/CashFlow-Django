@@ -1,0 +1,169 @@
+{% extends './component/base.html' %}
+{% load static %}
+
+{% block title %}
+Our features
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'authentication/css/features.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+{% endblock style %}
+
+{% block content %}
+    <div class="wrapper">
+           <div class="part_1">
+             <div class="caption">
+            <h4>Would you rather...?</h4>
+            <p>Predict is your secret weapon for understanding what is really happening in your business today and how it's going to impact your future business.‍</p>
+             </div>
+           </div>
+
+           <div class="cards">
+          <div class="items_1">
+        <div class="box1">
+          <div class="box_item1">
+            <div class="flex">
+             <img class="time" src="{%  static 'authentication/images/time.png' %}" height="60px" width="60px" alt="">
+            </div>
+            <div class="text">
+            <h5>Save time?</h5>
+            <p class="cursive">Predict does it all for you. Plug into Xero or QuickBooks Online, grab a coffee, and whammo-decisions are easier as your entire business is forecast for the next 3 years.</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="box2">
+            <div class="box_item2">
+              <div class="flex">
+               {% load static %}<img class="bank" src="{% static 'authentication/images/bank.png' %}" height="60px" width="60px" alt="">
+              </div>
+              <div class="text">
+              <h5>Save money?</h5>
+              <p class="cursive">Hey big spender. You had cash but where did it go? Predict knows. Predict knows everything. Pinpoint the holes in your pocket with customer payment trends, debt and affordability and tax all analysed and calculated.</p>
+              </div>
+            </div>
+            </div>
+
+            <div class="box3">
+              <div class="box_item3">
+                <div class="flex">
+                 <img class="dollar" src="{% static 'authentication/images/dollar.png' %}" height="73px" width="73px" alt="">
+                </div>
+                <div class="text">
+                <h5>Earn more cash?</h5>
+                <p class="cursive">You`ve got skills, you know you can do it - Predict just tells you where to focus your efforts. All your income streams will be in one place with a breakdown of their recent and upcoming trends. </p>
+                </div>
+              </div>
+              </div>
+
+              <div class="box4">
+                <div class="box_item4">
+                  <div class="flex">
+                   <img class="yes" src="{% static 'authentication/images/yes.png' %}" height="65px" width="65px" alt="">
+                  </div>
+                  <div class="text">
+                  <h5>All of the above?</h5>
+                  <p class="cursive">Not a trick option, believe or not Predict can help you with all of the above. Would be a daft choice to have all these options here if it didn`t. </p>
+                  </div>
+                </div>
+                </div>
+          </div>
+             <img class="img_1" src="{% static 'authentication/images/img1.png' %}" height="500px" width="500px" alt="">
+          </div>
+
+          <div class="items_2">
+            <div>
+            <img src="{% static 'authentication/images/img2.jpg' %}" height="570px" width="570px" alt="">
+            </div>
+
+            <div class="part_2">
+           <p class="caption_items2">PREDICTED CASH FLOW</p>
+           <h5 class="text_items2_1">Cash: your most
+            <br> important
+            <br> prediction</h5>
+            <p class="text_items2_2">What would you do with an extra 10k, 20k, 50k in <br> your bank? </p>
+            <p class="text_items2_3">It's amazing where you can find it if your cash flow is predicted.</p>
+
+            <div class="tick_box">
+              <a href=""><img src=" {% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+             <p class="txt_1">Every sale and spend is analyzed</p>
+            </div>
+            <div class="tick_box">
+             <a href=""><img src="{% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+             <p class="txt_1">Every payment (yours and customers) is analyzed</p>
+            </div>
+            <div class="tick_box">
+              <a href=""><img src="{% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+              <p class="txt_1">Add to predictions with your own custom plans</p>
+             </div>
+             <div class="tick_box">
+              <a href=""><img src="{% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+              <p class="txt_1">Cash and accruals VAT & GST is calculated</p>
+             </div>
+             <div class="tick_box">
+              <a href=""><img src="{% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+              <p class="txt_1">3-years of funding-ready cash flow can be exported</p>
+             </div>
+             <div class="tick_box">
+              <a href=""><img src="{% static 'authentication/images/check_mark.png' %}" height="20px" width="20px" alt=""></a>
+              <p class="txt_1">And so much more...</p>
+             </div>
+          <button class="button_1">Learn more <img src="{% static 'authentication/images/double_right.png' %}" height="18px" width="18px" alt=""></button>
+          </div>
+          </div>
+
+          <div class="part_3">
+            <img class="img4" src="{% static 'authentication/images/office.jpg' %}" width="99%" height="550px" style="opacity: 0.5;;"  alt="">
+            <h5 class="text_office">Professional Advice for your business.</h5>
+            <div>
+            <button class="button_3">Watch Intro</button>
+            <button class="button_4">Learn more</button>
+            </div>
+          </div>
+
+          <div class="part_4">
+            <h1>You know where you want to <br> take your business...</h1>
+            <p class="text_items3">Predict does all of the hard work, by giving you a baseline costs and expenses forecast as a starting point. <br>
+              Now it's your turn to own your future numbers.</p>
+            <img class="star" src="{% static 'authentication/images/favorites.png' %}" width="98px" height="100px" alt="">
+          </div>
+
+          <div class="part_5">
+            <div class="caption_part5">
+          <img src="{% static 'authentication/images/img3.png' %}" width="850px" height="680px" alt="">
+          </div>
+          <div class="elements_part5">
+          <p class="caption_items3">PREDICTION TECH</p>
+          <h5 class="text_items3_1">What`s a 4-way and
+           <br>why do I want one?</h5>
+           <p class="text_items3_2">You're a small business owner who is trying to grow your <br>company, but aren't always sure you're doing it right? </p>
+           <p class="text_items3_3">Predict's world-first, 4-way approach, takes your Xero or <br>QuickBooks data, analyses it, predicts it more accurately than a <br>human can and tells you what you can do to improve. </p>
+
+           <div class="tick_box_2">
+             <a href="" ><img class="square_tickbox" src="{% static 'authentication/images/tickbox.png' %}" height="20px" width="20px" alt=""></a>
+            <p class="txt_2">Due invoices & bills</p>
+           </div>
+           <div class="tick_box_2">
+            <a href="" ><img class="square_tickbox" src="{% static 'authentication/images/tickbox.png' %}" height="20px" width="20px" alt=""></a>
+            <p class="txt_2">Tax, debt and affordability</p>
+           </div>
+           <div class="tick_box_2">
+             <a href=""><img class="square_tickbox" src="{% static 'authentication/images/tickbox.png' %}" height="20px" width="20px" alt=""></a>
+             <p class="txt_2">Sales, spend and profit trends</p>
+           </div>
+           <div class="tick_box_2">
+             <a href=""><img class="square_tickbox" src="{% static 'authentication/images/tickbox.png' %}" height="20px" width="20px" alt=""></a>
+             <p class="txt_2">Predicted cash flow (of course)</p>
+            </div>
+            <button class="button_2">Learn more</button>
+            </div>
+          </div>
+    </div>
+{% endblock content %}

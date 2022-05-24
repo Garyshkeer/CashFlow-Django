@@ -1,0 +1,76 @@
+{% extends './baseProfile.html' %}
+
+{% load static %}
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patua+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'authentication/css/outin.css' %}">
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="all"><div class="container-fluid container-home" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>My inflows</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <a class="btn btn-outline-secondary" href="{% url 'inflow_create' %}" role="button"><span>Create inflow</span></a>
+      </div>
+    </div>
+  </div>
+    {% for message in messages %}
+        {% if message %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Registered at</th>
+          <th>Registered by</th>
+          <th>Value</th>
+        </tr>
+      
+      
+    {% if inflows %}
+        {% for inflow in inflows %}
+        <tr>
+            <td><a href="{% url 'inflow_detail' inflow.id %}">{{ inflow.name }}</a></td>
+            <td>{{ inflow.category }}</td>
+            <td>{{ inflow.registered_at|date:"d/m/Y" }}</td>
+            <td>{{ inflow.registered_by }}</td>
+            <td>{{ inflow.value }}</td>
+            <td>
+              <a class="icon" href="{% url 'inflow_delete' inflow.id %}"><img src="{% static 'authentication/images/icons8-trash.svg' %}" alt=""></a> 
+              <a class="icon" href="{% url 'inflow_edit' inflow.id %}"><img src="{% static 'authentication/images/icons8-edit.svg' %}" alt=""></a> 
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <td>Entries were not found for the current month.</td>
+    {% endif %}
+      
+    </table>
+  </div>
+  
+</body>
+</html>
+    
+{% endblock %}

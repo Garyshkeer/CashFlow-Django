@@ -1,0 +1,135 @@
+{% extends './baseProfile.html' %}
+{% load static %}
+{% block style %}
+{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'authentication/css/category_list.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<section class="all">
+  <!-- <img class="blob" src="{% static 'authentication/images/blob-back.svg' %}" alt=""> -->
+    <div style="font-family: 'Ubuntu', sans-serif;"class="container-fluid container-home" >
+    <div class="row">
+      <div class="col-md-6" style="display: flex; font-family: 'Times New Roman', Times, serif;">
+        <img class="time" src="{%  static 'authentication/images/icons8-categories-64 (1).png' %}" height="60px" width="60px" style="margin-bottom: 25px;" alt="">
+        <h1 style="font-size: 2.5rem;
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin-left: 15px; margin-right: 100px;">My Categories</h1>
+      </div>
+    </div>
+
+    
+    <div class="wrapper">
+      <button class="btn">
+        <a href="{% url 'category_create' %}"><span>Create category</span></a>
+        
+      </button>
+    </div>
+  
+      
+    </div>
+  </div>
+    {% for message in messages %}
+        {% if message %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div style="width:100%;" class="row">
+      <div class="col-md-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Relationships</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Inflow</td>
+              <td>{{ categories_inflow }}</td>
+            </tr>
+            <tr>
+              <td>Outflow</td>
+              <td>{{ categories_outflow }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Registered at</th>
+          <th scope="col">Registered by</th>
+          <!--<th scope="col">Inflow relations</th>
+          <th scope="col">Outflow relations</th>-->
+          </tr>
+      </thead>
+      <tbody>
+    {% if categories %}
+        
+        {% for category in categories %}
+        <tr>
+            <td><a href="{% url 'category_detail' category.id %}">{{ category.code }}</a>
+            </td>
+            <td>{{ category.name }}</td>
+            <td>{{ category.registered_at|date:"d/m/Y" }}</td>
+            <td>{{ category.registered_by }}</td>
+{#            <td>{{ categories_inflow }}</td>#}
+{#            <td>{{ categories_outflow }}</td>#}
+            <td>
+<!-- {#              <button type="button" class="btn btn-outline">#}
+{#                <a href="{% url 'category_detail' category.id %}">#}
+{#                  <i class="glyphicon glyphicon-eye-open"></i>#}
+{#                </a>#}
+{#                  Detail#}
+{#              </button>#} -->
+                <a class="icon" href="{% url 'category_delete' category.id %}"><img src="{% static 'authentication/images/icons8-trash.svg' %}" alt=""></a> 
+                <a class="icon" href="{% url 'category_edit' category.id %}"><img src="{% static 'authentication/images/icons8-edit.svg' %}" alt=""></a> 
+<!-- {#              <button type="button" class="btn btn-outline" name="edit">#}
+{#                <a href="{% url 'category_edit' category.id %}">#}
+{#                  <i class="glyphicon glyphicon-edit"></i>#}
+{#                </a>#}
+{#                  Edit#}
+{#              </button>#}
+{#              <button type="button" class="btn btn-outline">#}
+{#                <a href="{% url 'category_delete' category.id %}">#}
+{#                  <i class="glyphicon glyphicon-trash"></i>#}
+{#                </a>#}
+{#                  Delete#}
+{#              </button>#} -->
+                <!-- <form action="{% url 'category_detail' category.id %}">
+                    <input type="submit" value="Detail">
+                </form>
+                <form action="{% url 'category_edit' category.id %}">
+                    <input type="submit" value="Edit">
+                </form>
+                <form action="{% url 'category_delete' category.id %}">
+                    <input type="submit" value="Delete">
+                </form> -->
+            </td>
+        </tr>
+        {% endfor %}
+        
+    {% else %}
+        <td>Categories not found.</td>
+    {% endif %}
+      </tbody>
+    </table>
+  </section>
+{% endblock %}

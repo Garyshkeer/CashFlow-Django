@@ -1,0 +1,78 @@
+.all{
+  width: 80%;
+  margin-left: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+  button{
+    width: 320px;
+    height: 60px;
+    position: relative;
+    background: none;
+    border: none;
+    color: #666666;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  span{
+    display: block;
+    padding: 0 80px;
+  }
+  
+  button::before,
+  button::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #666666;
+  }
+  
+  span::before,
+  span::after {
+    content: "";
+    width: 5px;
+    height: 0;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #666666;
+  }
+  
+  button:hover::before,
+  button:hover::after{
+    width: 100%;
+  }
+  
+  button:hover span::before, 
+  button:hover span::after{
+    height: 100%;
+  }
+  
+  .btn::after {
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.4s;
+  }
+  .btn span::after {
+    right: 0;
+    top: 0;
+    transition-duration: 0.4s;
+  }
+  .btn::before {
+    right: 0;
+    top: 0;
+    transition-duration: 0.4s;
+  }
+  .btn span::before {
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.4s;
+  }
+  
+  

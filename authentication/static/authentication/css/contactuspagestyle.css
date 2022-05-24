@@ -1,0 +1,45 @@
+
+.office{
+    position: absolute;
+    top: 15%;
+    opacity: 0.5;
+    width: 1505px;
+    height: 600px;
+}
+.wave{
+    position: absolute;
+    top: 65%;
+}
+.contactinfo1{
+    position: relative;
+    font-size: 350%;
+    margin: 5%;
+    color: rgb(20, 14, 56);
+    z-index: 5;
+    font-family: 'Patua One', cursive; 
+    text-align: center;   
+}
+.heart{
+    width: 9%;
+    position: absolute;
+    z-index: 50;
+    top: 70%;
+    right: 10%;
+}
+.contactinfo2{
+    position: relative;
+    margin-top: 20%;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 150%;
+    color: rgb(20, 14, 56);
+    width: 50%;
+    margin-left: 25%;
+}   
+.email_link{
+    font-family: 'Hubballi', cursive;
+}
+h1{
+    font-size: 200%;
+    font-family: 'Patua One', cursive; 
+}

@@ -1,0 +1,30 @@
+{% load static %}
+{% block style%}<link rel="stylesheet" href="{% static 'authentication/css/base.css' %}">
+{% endblock %}
+{% block content %}
+<header>
+    <div class="wrapper">
+        <header class="header">
+          <div class="header__container">
+            <a href="{% url 'home' %}" class="header_logo">
+              <img class="logo_img" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c555a3118036499.60812f054bd81.jpg" alt="Логотип">
+              </a>
+            <nav class="header_menu menu">
+                {% block sidebar %}
+              <ul class="menu_list">
+                <li class="menu_item"><a href="{% url 'home' %}" class="menu_link">HOME</a></li>
+                <li class="menu_item"><a href="{% url 'why_cash_flow' %}" class="menu_link">WHY CashApp</a></li>
+                <li class="menu_item"><a href="{% url 'features' %}" class="menu_link">FEATURES</a></li>
+                <li class="menu_item"><a href="{% url 'contacts' %}" class="menu_link">CONTACT</a></li>
+              </ul>
+                    {% endblock%}
+            </nav>
+            <div class="header_button">
+              <a href="{% url 'signin' %}" class="login">LOG IN</a>
+              <a href="{% url 'signup' %}" class="signup">SIGN UP</a>
+            </div>
+          </div>
+        </header>
+    </div>
+</header>
+{% endblock %}
